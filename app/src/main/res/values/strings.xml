@@ -2,6 +2,8 @@
     <string name="app_name">MentalCounting</string>
     <string name="play">Play</string>
     <string name="lastscore">Score</string>
+
+    <!--Menu-->
     <string name="compute_menu_label">Compute</string>
     <string name="reset_menu_label">Reset</string>
 </resources>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Calcul Mentale</string>
     <string name="play">Jouer </string>
     <string name="lastscore">Score</string>
+
+    <!--Menu-->
     <string name="compute_menu_label">Calcule</string>
     <string name="reset_menu_label">Réinitialiser</string>
 </resources>

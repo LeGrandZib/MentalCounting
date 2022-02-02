@@ -7,6 +7,6 @@
         android:title="@string/compute_menu_label"
         app:showAsAction="always" />
     <item
-        android:id="reset_button"
+        android:id="@+id/reset_button"
         android:title="@string/reset_menu_label" />
 </menu>
