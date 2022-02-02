@@ -36,6 +36,11 @@ public class Play_Activity extends AppCompatActivity {
                 Intent intent = new Intent(this, Score_Activity.class);
                 startActivity(intent);
                 break;
+            case R.id.response_button:
+                // ouvrir l activité de resultat
+                Intent intent2 = new Intent(this, Score_Activity.class);
+                startActivity(intent2);
+                break;
             case R.id.reset_button:
                 // nettoyer la base de donnée
                 break;

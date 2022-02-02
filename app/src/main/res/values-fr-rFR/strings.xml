@@ -7,4 +7,5 @@
     <!--Menu-->
     <string name="compute_menu_label">Calcule</string>
     <string name="reset_menu_label">Réinitialiser</string>
+    <string name="enterResponse">Entrer votre réponse</string>
 </resources>

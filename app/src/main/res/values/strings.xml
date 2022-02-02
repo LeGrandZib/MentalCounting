@@ -6,4 +6,5 @@
     <!--Menu-->
     <string name="compute_menu_label">Compute</string>
     <string name="reset_menu_label">Reset</string>
+    <string name="enterResponse">Enter your response</string>
 </resources>
