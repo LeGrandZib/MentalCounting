@@ -2,4 +2,6 @@
 <resources>
     <string name="play">Jouer </string>
     <string name="lastscore">Score</string>
+    <string name="compute_menu_label">Calcule</string>
+    <string name="reset_menu_label">Réinitialiser</string>
 </resources>
