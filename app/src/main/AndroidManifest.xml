@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MentalCounting">
         <activity
+<<<<<<< HEAD
+            android:name=".Score_Activity"
+=======
             android:name=".Play_Activity"
+>>>>>>> b7cff593679f33b7895be89200455e0a9a4212e2
             android:exported="false" />
         <activity
             android:name=".MainActivity"
