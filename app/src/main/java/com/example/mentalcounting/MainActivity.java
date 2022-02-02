@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        associateOpenActivityToButton(R.id.score, Score_Activity.class);
         associateOpenActivityToButton(R.id.play_button, Play_Activity.class);
     }
 
