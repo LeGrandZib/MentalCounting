@@ -6,6 +6,18 @@
 
     <!--Menu-->
     <string name="compute_menu_label">Calcule</string>
-    <string name="reset_menu_label">Réinitialiser</string>
+    <string name="main_menu_label">Menu</string>
+    <string name="score_menu_label">Score</string>
+
+    <!--Play activity-->
     <string name="enterResponse">Entrer votre réponse</string>
+    <string name="button_reponse">Valider</string>
+    <string name="operation_text">L\'opération à résoudre est : XX</string>
+    <string name="success_text">Vous avez réussi</string>
+    <string name="fail_text">Vous avez échoué</string>
+
+    <!--Score-->
+    <string name="number_operation">Nombre totale d\'opérations</string>
+    <string name="percent_answer">Pourcentage de réussite</string>
+    <string name="last_operation">Dernière opération</string>
 </resources>

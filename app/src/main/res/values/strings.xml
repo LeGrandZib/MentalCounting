@@ -5,6 +5,18 @@
 
     <!--Menu-->
     <string name="compute_menu_label">Compute</string>
-    <string name="reset_menu_label">Reset</string>
+    <string name="main_menu_label">Menu</string>
+    <string name="score_menu_label">Score</string>
+
+    <!--Play activity-->
     <string name="enterResponse">Enter your response</string>
+    <string name="button_reponse">Validate</string>
+    <string name="operation_text">The operation to solve : XX</string>
+    <string name="success_text">You succeeded</string>
+    <string name="fail_text">You failed</string>
+
+    <!--Score-->
+    <string name="number_operation">Total numbers of operations</string>
+    <string name="percent_answer">Success percentage</string>
+    <string name="last_operation">Last operation</string>
 </resources>

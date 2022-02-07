@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class Play_Activity extends AppCompatActivity {
 
@@ -15,7 +16,22 @@ public class Play_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+
+        associateOpenActivityToButton(R.id.response_button, Score_Activity.class);
     }
+
+    private void associateOpenActivityToButton(int id,Class activity){
+        Button button = findViewById(id);
+        button.setOnClickListener(view -> openActivity(activity));
+
+    }
+
+    private void openActivity(Class activity) {
+        Intent intent = new Intent(this, activity);
+        startActivity(intent);
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -36,13 +52,15 @@ public class Play_Activity extends AppCompatActivity {
                 Intent intent = new Intent(this, Score_Activity.class);
                 startActivity(intent);
                 break;
-            case R.id.response_button:
-                // ouvrir l activité de resultat
-                Intent intent2 = new Intent(this, Score_Activity.class);
-                startActivity(intent2);
+            case R.id.menu_button:
+                //Retourne aux menu
+                Intent intent_menu = new Intent(this, MainActivity.class);
+                startActivity(intent_menu);
                 break;
-            case R.id.reset_button:
-                // nettoyer la base de donnée
+            case R.id.score_button:
+                //Retourne aux menu
+                Intent intent_score = new Intent(this, Score_Activity.class);
+                startActivity(intent_score);
                 break;
         }
 
