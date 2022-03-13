@@ -1,13 +1,13 @@
 package com.example.mentalcounting.models;
 
 public class operationModel {
-        private String _firstValue;
-        private String _secondValue;
+        private int _firstValue;
+        private int _secondValue;
         private String _operator;
 
         public operationModel(
-                String first,
-                String second,
+                int first,
+                int second,
                 String ope
         ){
             this._firstValue = first;
@@ -15,11 +15,11 @@ public class operationModel {
             this._operator = ope;
         }
 
-        public String getFirstValue() {
+        public int getFirstValue() {
             return _firstValue;
         }
 
-        public String getSecondValue() {
+        public int getSecondValue() {
             return _secondValue;
         }
 
