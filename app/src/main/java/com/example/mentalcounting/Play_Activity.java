@@ -5,25 +5,64 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.mentalcounting.services.OperationServices;
+import com.example.mentalcounting.models.operationModel;
 
 public class Play_Activity extends AppCompatActivity {
+
+    private TextView textView;
+    private operationModel model;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        associateOpenActivityToButton(R.id.response_button, Score_Activity.class);
+        this.textView = findViewById(R.id.operation_text);
+
+        associateServiceToButton(R.id.response_button);
+
+        model = OperationServices.generateOperation();
+
+        updateOperationInView(model);
+
+        editText =findViewById(R.id.input_number);
+        operationModel finalModel = model;
+
+        findViewById(R.id.success_text).setVisibility(View.GONE);
+        findViewById(R.id.fail_text).setVisibility(View.GONE);
     }
 
-    private void associateOpenActivityToButton(int id,Class activity){
-        Button button = findViewById(id);
-        button.setOnClickListener(view -> openActivity(activity));
 
+    private void associateServiceToButton(int id){
+        Button button = findViewById(id);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (OperationServices.resolveOperation(model, String.valueOf(editText.getText()))) {
+                    findViewById(R.id.success_text).setVisibility(View.VISIBLE);
+                    findViewById(R.id.fail_text).setVisibility(View.GONE);
+
+                    model = OperationServices.generateOperation();
+                    updateOperationInView(model);
+
+                } else {
+                    findViewById(R.id.success_text).setVisibility(View.GONE);
+                    findViewById(R.id.fail_text).setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
     private void openActivity(Class activity) {
@@ -31,6 +70,10 @@ public class Play_Activity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void updateOperationInView(operationModel model) {
+        String value = getString(R.string.operation_template, model.getFirstValue(), model.getOperator(), model.getSecondValue());
+        this.textView.setText(value);
+    }
 
 
     @Override
