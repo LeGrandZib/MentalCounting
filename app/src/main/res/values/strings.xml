@@ -11,7 +11,7 @@
     <!--Play activity-->
     <string name="enterResponse">Enter your response</string>
     <string name="button_reponse">Submit</string>
-    <string name="operation_template" translatable="false">The operation to solve : %1$s %2$s %3$s</string>
+    <string name="operation_template" translatable="false">The operation to solve : %1$d %2$s %3$d</string>
     <string name="operation_text">Text Vew</string>
     <string name="success_text">You succeeded</string>
     <string name="fail_text">You failed</string>

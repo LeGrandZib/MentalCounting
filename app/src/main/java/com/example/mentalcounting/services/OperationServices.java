@@ -24,7 +24,6 @@ public class OperationServices {
                 model = new operationModel(a,b,"*");
                 break;
             case 4:
-
                 while(a%b!=0||a==b||a/b<0){
                     a = (int)(2+Math.random() * 98);
                     b =(int)(2+Math.random() * 98);
