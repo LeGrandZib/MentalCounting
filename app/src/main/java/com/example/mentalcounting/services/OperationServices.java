@@ -7,7 +7,7 @@ public class OperationServices {
     public static operationModel generateOperation(){
         int a = (int)(1+Math.random() * ((100 ) + 1));
         int b =(int)(1+Math.random() * ((100 ) + 1));
-        int operator = 1+(int)(Math.random() * 3);
+        int operator = 1+(int)(Math.random() * 4);
 
         operationModel model = new operationModel(0,0,"+");
         switch (operator){
@@ -40,7 +40,7 @@ public class OperationServices {
         int secondValue = model.getSecondValue();
         String operator = model.getOperator();
         double reponseDouble = Double.parseDouble(reponse);
-        double result=0;
+        int result=0;
 
         switch (operator) {
             case "+":
@@ -55,11 +55,7 @@ public class OperationServices {
             case "/":
                 result = firstValue / secondValue;
                 break;
-            //default:
-               // throw new OperatorException("operator invalid");
         }
-       System.out.println(result);
-       System.out.println(reponseDouble);
         return result==reponseDouble;
     }
 }

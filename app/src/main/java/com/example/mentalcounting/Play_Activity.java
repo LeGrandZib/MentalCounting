@@ -31,6 +31,7 @@ public class Play_Activity extends AppCompatActivity {
         this.textView = findViewById(R.id.operation_text);
 
         associateServiceToButton(R.id.response_button);
+        associateResetServiceToButton(R.id.new_op_button);
 
         model = OperationServices.generateOperation();
 
@@ -41,6 +42,7 @@ public class Play_Activity extends AppCompatActivity {
 
         findViewById(R.id.success_text).setVisibility(View.GONE);
         findViewById(R.id.fail_text).setVisibility(View.GONE);
+        findViewById(R.id.error_text).setVisibility(View.GONE);
     }
 
 
@@ -49,18 +51,35 @@ public class Play_Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(editText.getText().length()>0) {
+                    findViewById(R.id.error_text).setVisibility(View.GONE);
+                    if (OperationServices.resolveOperation(model, String.valueOf(editText.getText()))) {
+                        findViewById(R.id.success_text).setVisibility(View.VISIBLE);
+                        findViewById(R.id.fail_text).setVisibility(View.GONE);
 
-                if (OperationServices.resolveOperation(model, String.valueOf(editText.getText()))) {
-                    findViewById(R.id.success_text).setVisibility(View.VISIBLE);
-                    findViewById(R.id.fail_text).setVisibility(View.GONE);
+                        model = OperationServices.generateOperation();
+                        updateOperationInView(model);
 
-                    model = OperationServices.generateOperation();
-                    updateOperationInView(model);
-
-                } else {
-                    findViewById(R.id.success_text).setVisibility(View.GONE);
-                    findViewById(R.id.fail_text).setVisibility(View.VISIBLE);
+                    } else {
+                        findViewById(R.id.success_text).setVisibility(View.GONE);
+                        findViewById(R.id.fail_text).setVisibility(View.VISIBLE);
+                    }
+                    editText.setText("");
                 }
+                else{
+                    findViewById(R.id.error_text).setVisibility(View.VISIBLE);
+                }
+            }
+        });
+    }
+
+    private void associateResetServiceToButton(int id){
+        Button button = findViewById(id);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                model = OperationServices.generateOperation();
+                updateOperationInView(model);
             }
         });
     }

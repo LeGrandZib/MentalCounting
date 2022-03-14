@@ -39,6 +39,16 @@
                 android:textColor="@color/red" />
 
             <TextView
+                android:id="@+id/error_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:gravity="center"
+                android:text="@string/error_text"
+                android:textAlignment="center"
+                android:textColor="@color/red" />
+
+            <TextView
                 android:id="@+id/success_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -77,6 +87,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/button_reponse" />
+
+            <Button
+                android:id="@+id/new_op_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/reset_button" />
 
             <Space
                 android:layout_width="match_parent"

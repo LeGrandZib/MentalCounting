@@ -20,4 +20,6 @@
     <string name="number_operation">Nombre totale d\'opérations</string>
     <string name="percent_answer">Pourcentage de réussite</string>
     <string name="last_operation">Dernière opération</string>
+    <string name="reset_button">Nouvelle Opération</string>
+    <string name="error_text">Veuillez saisir une réponse</string>
 </resources>
